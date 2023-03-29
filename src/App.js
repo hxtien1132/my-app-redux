@@ -1,21 +1,19 @@
-import React from 'react';
-import logo from './logo.svg';
-// import { Counter } from './features/counter/Counter';
-import './App.css';
-// import Counter from './components/Counter';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { increment ,decrement} from './redux/counter';
-import CounterToolkit from './components/Counter-toolkit';
+import './App.css';
+import HackerNewsThunk from './components/redux-thunk/HackerNewsThunk';
+// import HackerNews from './uis/HackerNews';
 
 function App() {
-  const {count} = useSelector(state => state.counter)
 
   return (
-   <div>
-   <h2>the counter from app is : {count}</h2>
-           {/* <Counter></Counter> */}
-           <CounterToolkit></CounterToolkit>
-   </div>
+    <div>
+      {/* <MainCounter></MainCounter> */}
+      {/* <ToggleDarkMode></ToggleDarkMode> */}
+      {/* <ToggleSidebar></ToggleSidebar> */}
+      {/* <HackerNews></HackerNews> */}
+      <HackerNewsThunk></HackerNewsThunk>
+    </div>
   );
 }
 

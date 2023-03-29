@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementByValue } from "../redux-toolkit/counterSlice";
+import { decrement, increment, incrementByValue } from "../../redux-toolkit/counterSlice";
 // import { decrement, increment, incrementvalue } from "../redux/counter";
-
 const CounterToolkit = () => {
- const count = useSelector((state)=>state.counter.count)
+  const count = useSelector((state) => state.counter.count)//đứng tại initialState trỏ vào count
+  // const reducer = useSelector((state) => state.counter.hxt);
+  console.log(count);
+  // console.log(reducer);
  const dispath = useDispatch();
  const handleIncrement = ()=>{
    dispath(increment())

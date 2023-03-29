@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementvalue } from "../redux/counter";
+import { decrement, increment, incrementvalue } from "../../redux/counter";
 
 const Counter = () => {
- const count = useSelector((state)=>state.counter.count)
+ const count = useSelector((state)=>state.counter.count) //state chính là reducer của reducer(store) của configureStore
  const dispath = useDispatch();
  const handleIncrement = ()=>{
    dispath(increment())

@@ -1,8 +1,8 @@
 import  {createStore,combineReducers} from "redux"
 import counterReducer from "./counter"
-const reducer = combineReducers({ //lien ket vs useselector
+const reducer = combineReducers({ 
     //key:value
-    counter:counterReducer,
+    counter:counterReducer, 
 });
 const store = createStore(reducer)
 export default store
