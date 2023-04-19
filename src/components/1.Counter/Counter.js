@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { decrement, increment, incrementvalue } from "../../redux/counter";
+import { decrement, increment, incrementvalue } from "../../redux/counter/counterReducer";
 
 const Counter = () => {
- const count = useSelector((state)=>state.counter.count) //state chính là reducer của reducer(store) của configureStore
+ const count = useSelector((state)=>state.counter.count) 
  const dispath = useDispatch();
  const handleIncrement = ()=>{
    dispath(increment())
@@ -17,7 +17,7 @@ const Counter = () => {
   return (
     <div className="flex flex-col items-center p-5 bg-white shadow w-[400px] mx-auto mt-10">
       <h2 className="mb-5">Counter:{count}</h2>
-      <div className="flex justify-center items-center gap-x-5">
+      <div className="flex items-center justify-center gap-x-5">
         <button
           className="inline-block p-2 border border-gray-200"
           onClick={handleIncrement}

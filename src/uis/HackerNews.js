@@ -2,9 +2,11 @@
 import { debounce } from "lodash";
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { getNews, otherAction, setQuery } from "../sagas/news/newsSlice";
 // import {handleFetchNews} from "../components/redux-thunk/newsSlice";
 import { getNews, setLoading, setQuery } from "../sagas/news/newsSlice";
+
+
+//user sagas
 const HackerNews = () => {
   const { hits, loading, errorMessage, query } = useSelector(
     (state) => state.news
