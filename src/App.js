@@ -1,45 +1,28 @@
-import React, { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import './App.css';
-import HackerNewsThunk from './redux-thunk/HackerNewsThunk';
-import MainCounter from './components/1.Counter/MainCounter';
-// import HackerNews from './uis/HackerNews';
-import { Typography, Divider } from "antd";
-import Filters from './components/4.TodoApp/Filters';
-import TodoList from './components/4.TodoApp/TodoList';
-const { Title } = Typography;
+import React, { useEffect } from "react";
+import "./App.css";
+import MaintodoApp from "./TodoApp-ReduxThunk/MaintodoApp";
+import { setupServer } from "./zFakeAPI";
+import { useDispatch } from "react-redux";
+import { fetchTodos } from "./TodoApp-ReduxThunk/todoListSlice";
 
+if (process.env.NODE_ENV === 'development') {
+  setupServer();
+}
 function App() {
-
+  const dispatch = useDispatch()
+  useEffect(() => {
+    dispatch(fetchTodos())
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
   return (
     // learning
-    // <div>
-    //     {/* <MainCounter></MainCounter> */}
-    //   {/* <ToggleDarkMode></ToggleDarkMode> */}
-    //   {/* <ToggleSidebar></ToggleSidebar> */}
-    //   {/* <HackerNews></HackerNews> */}
-    //   {/* <HackerNewsThunk></HackerNewsThunk> */}
-    // </div>
-
-
-    <div
-      style={{
-        width: 500,
-        margin: "0 auto",
-        display: "flex",
-        flexDirection: "column",
-        backgroundColor: "white",
-        padding: 20,
-        boxShadow: "0 0 10px 4px #bfbfbf",
-        borderRadius: 5,
-        height: "90vh",
-      }}
-    >
-    
-      <Title style={{ textAlign: "center" }}>TODO APP with REDUX</Title>
-      <Filters />
-      <Divider />
-      <TodoList />
+    <div>
+      {/* <MainCounter></MainCounter> */}
+      {/* <ToggleDarkMode></ToggleDarkMode> */}
+      {/* <ToggleSidebar></ToggleSidebar> */}
+      {/* <HackerNews></HackerNews> */}
+      {/* <HackerNewsThunk></HackerNewsThunk> */}
+      <MaintodoApp></MaintodoApp>
     </div>
   );
 }

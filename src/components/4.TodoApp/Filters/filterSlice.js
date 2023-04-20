@@ -1,12 +1,12 @@
-//dispatch =>
+// *** redux ***
 export const FilterSearch = "filter/searchFilterChange";
 export const FilterStatus = "filter/statusFilterChange";
 export const Filterpriority = "filter/priorityFilterChange";
 
 
-const filters = { search: "", status: "All", priorities: [] };
+const initstate = { search: "", status: "All", priorities: [] };
 
-function filterReducer(state = filters, action) {
+function filterSlice(state = initstate, action) {
   switch (action.type) {
     case FilterSearch:
       return { ...state, search: action.payload };
@@ -18,4 +18,5 @@ function filterReducer(state = filters, action) {
       return state;
   }
 }
-export default filterReducer;
+export default filterSlice;
+

@@ -5,7 +5,10 @@ import reportWebVitals from "./reportWebVitals";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.css";
 import { Provider } from "react-redux";
-import store  from './redux/configureStore';
+// import store from "./TodoApp-reduxToolkit/configureStore";
+import store from "./TodoApp-ReduxThunk/configureStore";
+
+// import store  from './redux/configureStore';
 // import store from "./redux-toolkit/configureStore";
 // import store from "./redux-sagas/configureStore";
 const container = document.getElementById("root");

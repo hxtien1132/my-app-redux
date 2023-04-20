@@ -1,4 +1,6 @@
-const todoList = [
+// redux
+
+const initState = [
   { id: 1, name: "hx tien", complete: false, priority: "Medium" },
   { id: 2, name: "linh chi", complete: false, priority: "High" },
   { id: 3, name: "trung hieu", complete: true, priority: "Low" },
@@ -6,7 +8,7 @@ const todoList = [
 export const addTodoList = "todoList/addTodo";
 export const toggleStatus = "todoList/toggleTodoStatus";
 
-function todoListReducer(state = todoList, action) {
+function todoListSlice(state =initState, action) {
   switch (action.type) {
     case addTodoList:
       return  [...state, action.payload] 
@@ -16,4 +18,6 @@ function todoListReducer(state = todoList, action) {
       return state;
   }
 }
-export default todoListReducer;
+export default todoListSlice;
+
+
